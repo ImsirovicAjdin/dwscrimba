@@ -1,3 +1,6 @@
-import { Component } from '@nagular/core';
+import { Component } from '@angular/core';
 
-@Component()
+@Component({
+    selector: 'app-customers',
+    templateUrl: './customers.component.html',
+})
