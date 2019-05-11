@@ -1,18 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
+// you never import BrowserModule more than once in your app!
+import { CustomersComponent } from './customers.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [ CustomersComponent ],
+  imports: [ CommonModule ]
 })
-export class AppModule { }
+export class CustomersModule { }
