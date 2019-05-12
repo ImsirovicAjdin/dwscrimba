@@ -13,7 +13,7 @@ export class CustomersComponent implements OnInit {
     constructor() {}
 
     ngOnInit() {
-        this.title = 'Customers';
+        this.title = 'Customers Test';
 
         this.people = [
             {
