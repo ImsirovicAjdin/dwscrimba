@@ -57,26 +57,3 @@ export class CustomersListComponent implements OnInit {
     }
 
 }
-
-/*
-An Angular service is a class that can be reused throughout an app
-It acts as a "singleton" (A singleton is an object that is created one time in memory, while the application runs, and it can then be shared, or reused, in many different spots, throughout the application)
-A service could be used in a component, it could be used in another service, etc.
-
-A service is a very simple item to create in an Angular application, cuz it's nothing more than a class with a 
-decorator:
-
-// data.service.ts
-import { Injectable } from '@angular/core';
-
-@Injectable()
-export class DataService {
-	constructor() { }
-	
-	myServiceFunction() {
-		// return data
-	}
-}
-
-@Injectable means that this DataService class can have a constructor where other services might be injected, or in other words, passed into the constructor at runtime. This concept's called 'Dependency injection'.
-*/
