@@ -20,7 +20,7 @@ export class CustomersComponent implements OnInit {
 
     ngOnInit() {
         this.title = 'Customers Test';
-
+        /*
         this.people = [
             {
                 id: 1, 
@@ -51,6 +51,7 @@ export class CustomersComponent implements OnInit {
                 customerSince: new Date(2014, 10, 10) 
             },                        
         ]
+        */
     }
 
 }
