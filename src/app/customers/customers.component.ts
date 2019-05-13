@@ -17,17 +17,20 @@ export class CustomersComponent implements OnInit {
         this.isVisible = !this.isVisible;
     }
 
-    /*
-    Remember the injection concept; back in the DataService we had an injectable, and that made it so that we can inject the HttpClient (which is a singleton) into constructor, dynamically
-    Now, the @Component decorator also allows it's constructor to be injectable, so I can do private dataService: DataService
-    At runtime, when CustomersComponent loads, DataService will be automatically created by the provider, injected into the constructor below, and now we'll have a private property called
-    dataService
-    And that's how we can inject this DataService into any component or even another service if you wanted to
-    */
-    constructor(private dataService: DataService) {}
+    constructor(private dataService: DataService) {
+        // Now we want to use the injected DataService to actually call into the getCustomers function, and then subscribe to this Observable in the getCustomers function, to get back this customers data
+        // and we'll do that in (1) here:
+    }
 
     ngOnInit() {
         this.title = 'Customers Test';
+        // This: this.dataService.getCustomers();  ...returns an observable, so we can't do this:
+        // this.people = this.dataService.getCustomers();
+        // instead, what we have to do, is tell the getCustomers to go to the server and get the data:
+        // this.dataService.getCustomers(); // and that's because getCustomers will get what's called a "cold observable" - a cold observable is the one that's ready to go, but you have to turn it on, otherwise it just sits there dormant and doesn't do anything
+
+        this.dataService.getCustomers()
+            .subscribe(); // of course, with the code like this, we would have no way to get the data back
         /*
         this.people = [
             {
