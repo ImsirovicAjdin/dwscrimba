@@ -20,17 +20,9 @@ export class DataService {
             );
     }
 
-    // we getCustomer, we pass a customer id as a number, and we get back an Observable (a delayed response) - with an customer in it (sincle I have <ICustomer>)
-    // so we can say 'return the observable, go get', in this case what we're expecting is to get back an array of customers, and we're gonna call customers.json, since we don't actually have
-    // a way to run a restul api
-
-    // in the pipe, what the map does, once the data starts flowing from the server down the pipeline, down the hose, then we can get to that response data... we know we are
-    // getting an array of ICustomers, and what I'm gonna do here is, I'm gonna say: customers.filter
-    // meaning: '(1) we received the customers here map(customers => ),
-    // and lets: '(2) filter them (... = customers.filter ) based on where customer id equals the the id that was passed in to getCustomer(id: number)
-    // so we're simply filtering that down to get our customer object
-    // then we're gonna say, ok, IF we found a customer here (in let customer), and we have a customer length, then we're gonna grab customer[0] (because filter returns an array),
-    // so we're saying in (3) 'if we have an array, and there's actually items in the array', then return the first item, otherwise we didn't find anything so just return null
+    // ... that's what the map does; as the data flows in, if there's customers in that data flowing through, the map  will map the customers
+    // into this callback function right here, and then it will return the actual customer (that obeys the <ICustomer> contract),
+    // and then we put a comma for another operator, and then we put a catchError 'filter', so if there was an error in the data flow, we can deal with that
     getCustomer(id: number) : Observable<ICustomer> {
         return this.http.get<ICustomer[]>(this.baseUrl + 'customers.json')
           .pipe(
