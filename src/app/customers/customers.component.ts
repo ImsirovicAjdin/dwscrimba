@@ -24,14 +24,14 @@ export class CustomersComponent implements OnInit {
         this.people = [
             {
                 id: 1, 
-                name: 'John Doe', 
+                name: 'john doe', 
                 city: 'Phoenix', 
                 orderTotal: 9.99, 
                 customerSince: new Date(2014, 7, 10) 
             },
             {
                 id: 2, 
-                name: 'Jane Doe', 
+                name: 'jane doe', 
                 city: 'Chandler', 
                 orderTotal: 9.99, 
                 customerSince: new Date(2017, 2, 22) 
