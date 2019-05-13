@@ -21,7 +21,7 @@
     <tr *ngIf="filteredCustomers && filteredCustomers.length">
         <td colspan="2">&nbsp;</td>
         <td>
-            {{ customerOrderTotal }}
+            {{ customerOrderTotal | currency:currencyCode:'symbol' }}
         </td>
     </tr>
     <tr *ngIf="!filteredCustomers || !filteredCustomers.length">
