@@ -1,7 +1,4 @@
-<!-- <h1>{{ title }}</h1> -->
-<!-- <h1 [innerHTML]="title"></h1> -->
 <h1 [hidden]="!isVisible">{{ title }}</h1>
 <button (click)="changeVisibility()">Change visibility</button>
 <br />
-<!-- passing this.people from the parent to the child -->
 <app-customers-list [customers]="people"></app-customers-list>

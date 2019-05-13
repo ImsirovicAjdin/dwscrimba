@@ -11,7 +11,6 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // We call a service that gets us the data
     this.title = 'Hello World using data binding';
   }
 }

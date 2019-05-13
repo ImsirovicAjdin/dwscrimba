@@ -2,15 +2,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class SorterService {
-    // the SorterService doesn't even have a constructor but we're still sticking with the recommendation from the official docs
 
 	property: string = null;
 	direction: number = 1;
 
-    // you can call the sort() function, pass in the collection that you wanna sort, then pass in the property that you wanna sort the collection by; it even supports nested properties,
-    // where you could have like customer.address.city, and sort by that nested city property if you want
 
-    // sort takes the collection you wanna sort, and the property you wanna sort by, so maybe you wanna sort by the city, or the name, or the ordder total
     sort(collection: any[], prop: any) {
         this.property = prop;
         this.direction = (this.property === prop) ? this.direction * -1 : 1;
