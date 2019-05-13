@@ -1,9 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { CustomersComponent } from '../customers.component';
 
 @Component({
     selector: 'filter-textbox',
     template: `
-        <!-- this [(ngM)] will automatically with the square brackets update the value of the input and with parentheses it will raise an event up that will update the filter -->
+        <!-- this [(ngM)] will take the "filter" value of the input, and it will automatically with the square brackets update the value of the input and with parentheses it will raise an event up that will update the filter -->
+        <!-- however, ngModel is not one of the built-in, default directives that you get for free
+        <!-- to make this ngModel work, you need to go to the feature's module ('customer.module.ts') and import a FormsModule -->
         Filter: <input type="text" [(ngModel)]="filter" />
     `
 })
