@@ -17,7 +17,14 @@ export class CustomersComponent implements OnInit {
         this.isVisible = !this.isVisible;
     }
 
-    constructor() {}
+    /*
+    Remember the injection concept; back in the DataService we had an injectable, and that made it so that we can inject the HttpClient (which is a singleton) into constructor, dynamically
+    Now, the @Component decorator also allows it's constructor to be injectable, so I can do private dataService: DataService
+    At runtime, when CustomersComponent loads, DataService will be automatically created by the provider, injected into the constructor below, and now we'll have a private property called
+    dataService
+    And that's how we can inject this DataService into any component or even another service if you wanted to
+    */
+    constructor(private dataService: DataService) {}
 
     ngOnInit() {
         this.title = 'Customers Test';
