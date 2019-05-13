@@ -3,7 +3,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
     selector: 'filter-textbox',
     template: `
-        Filter: <input type="text" [value]="filter" (input)="filter=$event.target.value" />
+        <!-- this [(ngM)] will automatically with the square brackets update the value of the input and with parentheses it will raise an event up that will update the filter -->
+        Filter: <input type="text" [(ngModel)]="filter" />
     `
 })
 export class FilterTextboxComponent implements OnInit {
