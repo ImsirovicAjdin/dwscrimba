@@ -17,7 +17,7 @@ export class CustomersListComponent implements OnInit {
 
     set customers(value: ICustomer[]) {
         if (value) {
-            this.filteredCustomers = this._customers = value;
+            this.filteredCustomers = this._customers = value; // (!)
             this.calculateOrders(); // this will iterate thru the customers and do sth with those
         }
     }
@@ -54,6 +54,9 @@ export class CustomersListComponent implements OnInit {
 
     sort(prop: string) {
         // A sorter service will handle the sorting
+        // ... so really, all we need to know in a component, such as our customers list component here, is that we need, in our sort() function, to build a call to that
+        // ... sorter service.sort, pass in our filtered customers that we got on line 20 of this file in (!) 
+        // ... and then get this sorted data back and display it
     }
 
 }
