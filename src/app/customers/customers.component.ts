@@ -7,6 +7,7 @@ import { ICustomer } from '../shared/interfaces';
     templateUrl: './customers.component.html'
 })
 export class CustomersComponent implements OnInit {
+
     title: string;
     people: ICustomer[];
     isVisible = true;
@@ -51,4 +52,5 @@ export class CustomersComponent implements OnInit {
             },                        
         ]
     }
+
 }
