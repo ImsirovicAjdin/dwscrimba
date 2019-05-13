@@ -9,6 +9,8 @@ import { ICustomer, IOrder } from '../../app/shared/interfaces';
 @Injectable()
 export class DataService {
     
+    baseUrl: string = 'assets/';
+
     constructor() {}
 
 }
