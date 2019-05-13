@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ICustomer } from '../shared/interfaces';
+import { DataService } from '../core/data.service';
 
 @Component({
     selector: 'app-customers',
