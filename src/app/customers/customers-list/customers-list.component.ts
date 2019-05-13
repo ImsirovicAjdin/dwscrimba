@@ -7,10 +7,22 @@ import { ICustomer } from '../../shared/interfaces';
     templateUrl: './customers-list.component.html'
 })
 export class CustomersListComponent implements OnInit {
+    // instead, we'll use the property getters and setters technique, 
+    // made available by ES2015
+    private _customers: ICustomer[] = [];
+    // I'm gonna add a get block here
+    @Input() get customers(): ICustomer[] {
+        return this._customers;
+    }
 
-    @Input() customers: any[];
+    set customers(value: ICustomer[]) {
+        if (value) {
+            this.filteredCustomers = this._customers = value;
+            this.calculateOrders(); // this will iterate thru the customers and do sth with those
+        }
+    }
 
-    filteredCustomers: ICustomer[] = [];
+    filteredCustomers: any[] = [];
     customersOrderTotal: number;
     currencyCode: string = 'USD';
 
@@ -18,12 +30,6 @@ export class CustomersListComponent implements OnInit {
 
     ngOnInit() {
     }
-
-        
-    ngOnChanges(changes: SimpleChanges) {
-        
-    }
-
 
     calculateOrders() {
         this.customersOrderTotal = 0;

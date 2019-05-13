@@ -3,4 +3,5 @@
 <h1 [hidden]="!isVisible">{{ title }}</h1>
 <button (click)="changeVisibility()">Change visibility</button>
 <br />
-<app-customers-list></app-customers-list>
+<!-- passing this.people from the parent to the child -->
+<app-customers-list [customers]="people"></app-customers-list>
