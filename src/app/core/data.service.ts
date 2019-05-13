@@ -33,7 +33,18 @@ export class DataService {
             catchError(this.handleError)
           )
       }
-  
+ 
+      // in getOrders, we take the customer id, and we grab the orders json (satisfying the <IOrder[]> contract),
+      // pipe that data into the map operator, that gives us back an array of IOrder members,
+      // and again, we're gonna filter those based on the order.customerId, so if I pass in customer id of 5,
+      // like this: getOrders(5), we know that we only want to grab order.customerId === 5
+      // and then we're gonna return those
+
+      // Now what map does in both getCustomer and getOrders, whatever gets returned from the map, that's what the caller gets
+      // So in other words, they will not get the original <IOrder[]> array that we received
+      // here: -----------------------------|vvv|
+      // we'll return the filtered custOrders, and that's actually what the caller will get (whoever subscribes to this)
+      // and that's the way that map function works
       getOrders(id: number) : Observable<IOrder[]> {
         return this.http.get<IOrder[]>(this.baseUrl + 'orders.json')
           .pipe(
