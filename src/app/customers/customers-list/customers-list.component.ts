@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { ICustomer } from '../../shared/interfaces';
 
+// (2) And then we're gonna go ahead and import that of course
+import { SorterService } from 'src/app/core/sorter.service';
+
 @Component({
     selector: 'app-customers-list',
     templateUrl: './customers-list.component.html'
@@ -25,7 +28,8 @@ export class CustomersListComponent implements OnInit {
     customersOrderTotal: number;
     currencyCode: string = 'USD';
 
-    constructor() {}
+    // (1) I already have a constructor, so I'll inject a sorter service
+    constructor(private sorterService: SorterService) {}
 
     ngOnInit() {
     }
@@ -52,6 +56,9 @@ export class CustomersListComponent implements OnInit {
 
 
     sort(prop: string) {
+        // (3) so now that we have the sorterService injected, we're gonna use it
+        // (4) remember this, we added our click event
+        this.sorterService.sort(this.filteredCustomers, prop);
     }
 
 }
