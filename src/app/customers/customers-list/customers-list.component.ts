@@ -43,8 +43,12 @@ export class CustomersListComponent implements OnInit {
                     city: 'New York', 
                     orderTotal: 9.99, 
                     customerSince: new Date(2014, 10, 10) 
-                },         
+                },
         ]
+        
+        sort(prop: string) {
+            // A sorter service will handle the sorting
+        }
 
     }
 
