@@ -7,6 +7,7 @@ import { CustomersComponent } from './customers.component';
 import { CustomersListComponent } from './customers-list/customers-list.component';
 import { FilterTextboxComponent } from './customers-list/filter-textbox.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CustomersRoutingModule } from './customers-routing.module';
 
 @NgModule({
   declarations: [ CustomersComponent, CustomersListComponent, FilterTextboxComponent ],
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule, 
     SharedModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CustomersRoutingModule
   ],
   exports: [ CustomersComponent ]
 })
