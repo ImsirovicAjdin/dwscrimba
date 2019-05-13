@@ -45,10 +45,10 @@ export class CustomersListComponent implements OnInit {
                        cust.city.toLowerCase().indexOf(data.toLowerCase()) > -1 ||
                        cust.orderTotal.toString().indexOf(data) > -1;
             });
-            this.calculateOrders();
         } else {
             this.filteredCustomers = this.customers;
         }
+        this.calculateOrders(); // Make it always recalculate the orders to avoid the calculate orders bug        
     }
 
 
