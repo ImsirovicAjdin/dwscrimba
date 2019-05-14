@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { OrdersComponent } from '../orders/orders.component';
+import { OrdersComponent } from './orders.component';
 
 // Routes can be used to hook a specific URL to a component
 // Components can be loaded into a <router-outlet></router-outlet>
